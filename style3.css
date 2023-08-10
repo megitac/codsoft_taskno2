@@ -1,0 +1,204 @@
+body{
+    background: blueviolet;
+    color: aliceblue;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo{
+    position: relative;
+    font-size: 25px;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 600;
+
+}
+
+.logo::before{
+    content:'';
+    position : absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: blueviolet;
+    animation: showRight 1s ease forwards;
+    animation-delay: 0.4s;
+}
+.navbar a{
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight:500;
+    margin-inline-start:45px;
+}
+.navbar a:hover,
+.navbar a.button{
+    color: bisque;
+
+}
+.home{
+    height: 100vh;
+    background-position: right;
+    margin-right:80px ;
+    display: flex;
+    align-items: center;
+    padding: 0 15%;
+}
+.home-content h1{
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.home-content h1::before{
+    content:'';
+    position : absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: blueviolet;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s;
+}
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    color: aqua;
+    margin: 20px 0 40px;
+}
+.home-content h3::before{
+    content:'';
+    position : absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: blueviolet;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s;
+}
+.home-content .btn-box{
+    width: 345px;
+    height: 50px;
+}
+.btn-box a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background-color: aqua;
+    border: 2px solid rgb(22, 194, 216);
+    border-radius: 8px;
+    font-size: 19px;
+    color:black;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;;
+}
+.btn-box a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: black;
+    z-index: -1;
+    transition: 0.5s;
+}
+.btn-box a:hover::before{
+    width:100%;
+}
+.btn-box a:hover{
+    color:cornflowerblue;
+}
+.footer{
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer a{
+    position: relative;
+    display: inline-flex;
+    justify-content:center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.footer a:hover{
+    color: black;
+}
+
+.footer a:hover::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: blue;
+    z-index: -1;
+    transition: 0.5s;
+}
+.footer a:hover::before{
+    width: 100%;
+}
+@keyframes showRight {
+    100%{
+        width: 0;
+    }
+}
+.toggle-button{
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width :30px;
+    height:21px;
+   }
+.toggle-button .but{
+    height: 3px;
+    width: 100%;
+    background-color:white;
+    border-radius: 10px;
+}
+@media(max-width:850px){
+    .toggle-button{
+        display: flex;
+    }
+    .navbar{
+        display:none;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
